@@ -75,18 +75,13 @@ def predict(theta,X):
     y_pred=np.where(h>=0.5,1,0)
     return y_pred
 y_pred=predict(theta,X)
-
 accuracy=np.mean(y_pred.flatten()==y)
 print('Accuracy:',accuracy)
-
 print(y_pred)
-
 print(Y)
-
 xnew=np.array([[0,87,0,95,0,2,78,2,0,0,1,0]])
 y_prednew=predict(theta,xnew)
 print(y_prednew)
-
 ```
 
 ## Output:
