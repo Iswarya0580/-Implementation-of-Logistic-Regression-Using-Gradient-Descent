@@ -9,21 +9,22 @@ To write a program to implement the the Logistic Regression Using Gradient Desce
 
 ## Algorithm
 ```
-1)Import the necessary python packages
-2)Read the dataset.
-3)Define X and Y array.
-4)Define a function for costFunction,cost and gradient.
-5)Define a function to plot the decision boundary and predict the Regression value
+Step 1. Start
+Step 2. Import the necessary python packages
+Step 3. Read the dataset.
+Step 4. Define X and Y array.
+Step 5. Define a function for costFunction,cost and gradient.
+Step 6. Define a function to plot the decision boundary and predict the Regression value
+Step 7. End
 ```
 ## Program:
 ```
-/*
 Program to implement the the Logistic Regression Using Gradient Descent.
 Developed by: Iswarya P
 RegisterNumber:  212223230082
-*/
 
-
+```
+```
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -51,11 +52,9 @@ dataset["workex"]=dataset["workex"].cat.codes
 dataset["specialisation"]=dataset["specialisation"].cat.codes
 dataset["status"]=dataset["status"].cat.codes
 dataset
-
 X=dataset.iloc[:,:-1].values
 Y=dataset.iloc[:,-1].values
 Y
-
 theta=np.random.randn(X.shape[1])
 y=Y
 def sigmoid(z):
@@ -63,7 +62,6 @@ def sigmoid(z):
 def loss(theta,X,y):
     h=sigmoid(X.dot(theta))
     return  -np.sum(y*np.log(h)+(1-y)*log(1-h))
-
 def gradient_descent(theta,X,y,alpha,num_iterations):
     m=len(y)
     for i in range(num_iterations):
@@ -72,7 +70,6 @@ def gradient_descent(theta,X,y,alpha,num_iterations):
         theta-=alpha*gradient
     return theta
 theta=gradient_descent(theta,X,y,alpha=0.01,num_iterations=1000)
-
 def predict(theta,X):
     h=sigmoid(X.dot(theta))
     y_pred=np.where(h>=0.5,1,0)
@@ -102,7 +99,6 @@ print(y_prednew)
 
 ## y_prednew
 ![image](https://github.com/user-attachments/assets/ddc1053c-4e5a-4b43-971d-e700a7fa41cd)
-
 
 
 ## Result:
